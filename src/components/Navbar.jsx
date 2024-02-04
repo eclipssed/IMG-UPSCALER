@@ -131,7 +131,7 @@ const Navbar = () => {
           {/* menu for large devices */}
           <div className=" hidden lg:block md:w-auto" id="navbar">
             <div className=" flex gap-4 items-center justify-center">
-              <ul className="flex p-2 md:space-x-8 mt-0 mr-24">
+              <ul className="flex p-2 md:space-x-8 mt-0 mr-32">
                 {navLinks.map((link, index) =>
                   link.title === "Tools" ? (
                     <div className="flex flex-col gap-2" key={index}>
@@ -139,7 +139,7 @@ const Navbar = () => {
                         <div
                           onClick={() => setShowTools((prev) => !prev)}
                           href={link.href}
-                          className=" text-black py-2 pl-3 pr-4 sm:text-xl rounded md:p-0 flex hover:cursor-pointer items-center  gap-2"
+                          className="text-black pl-3 pr-4 sm:text-xl rounded md:p-0 flex hover:cursor-pointer items-center  gap-2"
                         >
                           {link.title}
                           <span>
@@ -148,7 +148,9 @@ const Navbar = () => {
                         </div>
                         <div
                           className={`${
-                            showTools ? "p-4 space-y-2 rounded-lg my-4 " : ""
+                            showTools
+                              ? " rounded-lg mt-4 border-t-4 border-t-primary "
+                              : ""
                           }`}
                         >
                           {showTools &&
@@ -156,7 +158,7 @@ const Navbar = () => {
                               <Link
                                 onClick={() => setShowTools(false)}
                                 href={tool.href}
-                                className="block text-black py-2 pl-3 pr-4 sm:text-xl  rounded md:p-0"
+                                className="block text-black py-3 pl-3 pr-4 sm:text-xl border border-darkGray  rounded"
                               >
                                 {tool.title}
                               </Link>
@@ -179,10 +181,10 @@ const Navbar = () => {
                 )}
               </ul>
               <div className="flex items-center gap-4 relative  justify-center">
-                <button className="authBtn">
+                <button className="btn">
                   <NavLink href={"/signIn"} title={"Sign In"} />
                 </button>
-                <button className="authBtn">
+                <button className="btn">
                   <NavLink href={"/signUp"} title={"Sign Up"} />
                 </button>
               </div>

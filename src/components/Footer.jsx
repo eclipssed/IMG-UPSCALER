@@ -50,7 +50,7 @@ const legalLinks = [
 ];
 const Footer = () => {
   return (
-    <footer className="text-black mt-8 bg-primary">
+    <footer className="text-black bg-primary">
       <div className="wrapper py-12 flex flex-col justify-evenly md:flex-row gap-8">
         <div className="flex items-center gap-1">
           <Link href={"/"} className="text-2xl md:text-4xl font-bold">
