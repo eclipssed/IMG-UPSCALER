@@ -1,4 +1,5 @@
 import React from "react";
+import footerLogo from "@/public/assets/footerLogo.png";
 import {
   FaTelegramPlane,
   FaInstagram,
@@ -9,6 +10,7 @@ import { MdEmail } from "react-icons/md";
 import SocialLinks from "./FooterLinks/SocialLinks";
 import FooterLinks from "./FooterLinks/FooterLinks";
 import Link from "next/link";
+import Image from "next/image";
 
 const productLinks = [
   {
@@ -50,11 +52,11 @@ const legalLinks = [
 ];
 const Footer = () => {
   return (
-    <footer className="text-black bg-primary">
+    <footer className="text-white bg-primary mt-16">
       <div className="wrapper py-12 flex flex-col justify-evenly md:flex-row gap-8">
         <div className="flex items-center gap-1">
           <Link href={"/"} className="text-2xl md:text-4xl font-bold">
-            <span className="text-black">ImgUpscaler</span>
+            <Image height={47} width={175} src={footerLogo} alt="logo" />
           </Link>
         </div>
         <FooterLinks title={"Products"} links={productLinks} />
@@ -62,8 +64,8 @@ const Footer = () => {
         <FooterLinks title={"Legal"} links={legalLinks} />
         <SocialLinks />
       </div>
-      <p className="text-center p-4 font-semibold">
-        © 2021 Copyright, All Right Reserved Made by ImgUpscaler
+      <p className="text-center p-4">
+        © 2021 Copyright, All Right Reserved Made by image-Ai
       </p>
     </footer>
   );

@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import navbarLogo from "@/public/assets/navbarLogo.png";
 import Link from "next/link";
-import NavLink from "./NavLink";
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const mobileNavLinks = [
   {
@@ -46,14 +46,36 @@ const mobileNavLinks = [
     title: "Sign Up",
   },
 ];
-const navLinks = [
+const NavLinks = [
   {
     href: "/",
     title: "Home",
   },
   {
     href: "/aboutUs",
-    title: "About us",
+    title: "About",
+  },
+  {
+    href: "/",
+    title: "Tools",
+    toolsArray: [
+      {
+        title: "IMAGE COLORIZE",
+        href: "/colorizeScreen",
+      },
+      {
+        title: "IMAGE UPSCALE",
+        href: "/upscaleScreen",
+      },
+      {
+        title: "BACKGROUND REMOVE",
+        href: "/backgroundRemoveScreen",
+      },
+      {
+        title: "IMAGE UPSCALE",
+        href: "/blurScreen",
+      },
+    ],
   },
   {
     href: "/blog",
@@ -63,46 +85,20 @@ const navLinks = [
     href: "/pricing",
     title: "Pricing",
   },
-  {
-    href: "/",
-    title: "Tools",
-  },
-  // {
-  //   href: "/signIn",
-  //   title: "Sign In",
-  // },
-  // {
-  //   href: "/signUp",
-  //   title: "Sign Up",
-  // },
 ];
 
-const toolsData = [
-  {
-    title: "Colorize Screen",
-    href: "/colorizeScreen",
-  },
-  {
-    title: "Blur Screen",
-    href: "/blurScreen",
-  },
-  {
-    title: "Background Remove Screen",
-    href: "/backgroundRemoveScreen",
-  },
-];
 const Navbar = () => {
+  const [isMenuOpen, setisMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showTools, setShowTools] = useState(false);
-  // const [logo, setLogo] = useState("");
+
   const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
+    setisMenuOpen((prev) => !prev);
   };
-  const pathname = usePathname();
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 100) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -116,84 +112,97 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-lightGray w-full">
-      <div
-        className={` py-4 z-10 relative ease-out duration-100 ${
-          isSticky ? " ease-in sticky top-0 left-0 right-0  bg-opacity-80" : ""
+    <header className=" w-full bg-transparent  fixed top-0 left-0 right-0 z-30">
+      <nav
+        className={` py-4 ${
+          isSticky
+            ? "sticky top-0 left-0 right-0  border-b bg-white  duration-300"
+            : "bg-lightGray"
         }`}
       >
-        <div
-          className={`flex items-center justify-between mx-auto py-4 px-6 md:px-16 duration-300`}
-        >
-          <Link href={"/"} className="text-2xl md:text-4xl font-bold">
-            <span className="text-primary">ImgUpscaler</span>
+        <div className="flex wrapper justify-between items-center text-base gap-8 ">
+          <Link href="/">
+            <Image
+              width={175}
+              height={47}
+              src={navbarLogo}
+              // className=""
+              alt="logo.png"
+            />
           </Link>
-          {/* menu for large devices */}
-          <div className=" hidden lg:block md:w-auto" id="navbar">
-            <div className=" flex gap-4 items-center justify-center">
-              <ul className="flex p-2 md:space-x-8 mt-0 mr-32">
-                {navLinks.map((link, index) =>
-                  link.title === "Tools" ? (
-                    <div className="flex flex-col gap-2" key={index}>
-                      <div className="bg-lightGray absolute rounded-lg">
-                        <div
-                          onClick={() => setShowTools((prev) => !prev)}
-                          href={link.href}
-                          className="text-black pl-3 pr-4 sm:text-xl rounded md:p-0 flex hover:cursor-pointer items-center  gap-2"
-                        >
-                          {link.title}
-                          <span>
-                            {showTools ? <IoIosArrowUp /> : <IoIosArrowDown />}
-                          </span>
-                        </div>
-                        <div
-                          className={`${
-                            showTools
-                              ? " rounded-lg mt-4 border-t-4 border-t-primary "
-                              : ""
-                          }`}
-                        >
-                          {showTools &&
-                            toolsData.map((tool) => (
+          {/* nav items for large devices */}
+          <div className="flex gap-32 justify-between items-center">
+            <ul className="md:flex space-x-8 hidden">
+              {NavLinks.map((link) =>
+                link.title === "Tools" ? (
+                  <li
+                    className="hover:cursor-pointer"
+                    onClick={() => setShowTools((prev) => !prev)}
+                    key={link.title}
+                  >
+                    <div className="flex gap-2 text-base text-black hover:text-primary first:font-medium items-center">
+                      {link.title}
+                      <span>
+                        {showTools ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                      </span>
+                    </div>
+                    <Link
+                      href={link.href}
+                      className="block text-base text-black hover:text-primary first:font-medium"
+                    >
+                      <ul
+                        className={`absolute ${
+                          showTools ? "border-2 border-t-primary" : ""
+                        } ${
+                          isSticky ? "bg-white" : "bg-lightGray"
+                        } bg-lightGray mt-6  rounded-lg `}
+                      >
+                        {showTools &&
+                          link.toolsArray.map((tool) => (
+                            <li
+                              key={tool.title}
+                              className="border-b border-b-darkGray px-8 py-4"
+                            >
                               <Link
-                                onClick={() => setShowTools(false)}
                                 href={tool.href}
-                                className="block text-black py-3 pl-3 pr-4 sm:text-xl border border-darkGray  rounded"
+                                className="block text-base text-black hover:text-primary first:font-medium"
                               >
                                 {tool.title}
                               </Link>
-                            ))}
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <li
-                      key={index}
-                      className={` ${
-                        pathname === link.href
-                          ? "border-b-2 border-b-primary pb-1"
-                          : ""
-                      }`}
+                            </li>
+                          ))}
+                      </ul>
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={link.title}>
+                    <Link
+                      href={link.href}
+                      className="block text-base text-black hover:text-primary first:font-medium"
                     >
-                      <NavLink href={link.href} title={link.title} />
-                    </li>
-                  )
-                )}
-              </ul>
+                      {link.title}
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+            {/* btn for large devices */}
+            <div className="hidden xl:block">
               <div className="flex items-center gap-4 relative  justify-center">
                 <button className="btn">
-                  <NavLink href={"/signIn"} title={"Sign In"} />
+                  <Link href={"/signIn"}>Sign In</Link>
                 </button>
                 <button className="btn">
-                  <NavLink href={"/signUp"} title={"Sign Up"} />
+                  <Link href={"/signUp"}>Sign Up</Link>
                 </button>
               </div>
             </div>
           </div>
-          <div className="lg:hidden ">
+          {/* menu btn for only mobile devices */}
+          <div className="md:hidden ">
             <div
               onClick={toggleMenu}
-              className="text-light focus:outline-none focus:text-gray-500"
+              className="text-neutralDGrey focus:outline-none focus:text-gray-500"
             >
               {isMenuOpen ? (
                 <FaXmark className="w-6 h-6 " />
@@ -203,28 +212,26 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        {/* menu for mobile devices */}
-        <div className="lg:hidden relative mx-auto w-full block text-center">
-          {isMenuOpen && (
-            <div
-              className={` bg-primary w-full ${
-                isMenuOpen ? "border-b" : ""
-              } absolute p-4 z-10`}
+
+        {/* nav items for mobile devices */}
+        <div
+          className={`space-y-4 px-4 bg-primary mt-16 py-7 text-white ${
+            isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"
+          }`}
+        >
+          {mobileNavLinks.map(({ href, title }) => (
+            <Link
+              href={href}
+              key={title}
+              onClick={() => setisMenuOpen(false)}
+              className="block text-base hover:text-neutralDGrey first:font-medium hover:bg-white rounded-lg"
             >
-              {isMenuOpen && (
-                <ul className="space-y-4 my-4">
-                  {mobileNavLinks.map((link, index) => (
-                    <li key={index} onClick={toggleMenu}>
-                      <NavLink href={link.href} title={link.title} />
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          )}
+              {title}
+            </Link>
+          ))}
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

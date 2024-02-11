@@ -9,8 +9,7 @@ import removeBgImg2 from "@/public/assets/removeBgImg2.png";
 import blurBgImg1 from "@/public/assets/blurBgImg1.png";
 import blurBgImg2 from "@/public/assets/blurBgImg2.png";
 import heroBanner from "@/public/assets/heroBanner.png";
-import heroBeforeImg from "@/public/assets/heroBeforeImg.png";
-import heroAfterImg from "@/public/assets/heroAfterImg.png";
+
 import Image from "next/image";
 
 const servicesCardArray = [
@@ -50,22 +49,23 @@ const servicesCardArray = [
 
 const HeroSection = () => {
   return (
-    <section className=" relative py-16">
+    <section className="relative mt-16  w-full">
       <Image
-        className="absolute -mt-16"
+        className="absolute"
         src={heroBanner}
-        height={200}
-        width={2000}
         alt="heroBanner"
+        height={5000}
+        width={3000}
       />
-      <div className="wrapper flex flex-col justify-center items-center">
-        <div className="text-center text-white z-10 space-y-3">
+
+      <div className="wrapper flex flex-col justify-center items-center py-16">
+        <div className="text-center text-white max-md:text-black z-10 space-y-3">
           <p className="text-xl">Img Upscaler</p>
           <h2 className="font-semibold text-2xl">
             Best AI Technology Platform <br /> to restore Old Photos for free{" "}
           </h2>
         </div>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative gap-4">
+        <div className="mt-8 flex flex-wrap justify-center items-center relative gap-4">
           {servicesCardArray.map((service) => (
             <ServiceCard
               btnTitle={service.btnTitle}
@@ -75,47 +75,6 @@ const HeroSection = () => {
               description={service.description}
             />
           ))}
-        </div>
-      </div>
-      <div className="wrapper grid grid-cols-2  my-32 gap-28">
-        <div className="space-y-4">
-          <h2 className="text-2xl font-semibold">
-            Colorize Black and White Photos <br /> Online with IMG-AI Colorizer
-          </h2>
-          <p>
-            Colorize photo online in 5 seconds with Img Upscale Photo Colorizer.
-            And turn any black and white photos to color using deep learning.
-            With our image colorizer, you can colorize old pictures of family,
-            historic figures, ancestors, films, and more. Fix yellow tint of
-            vintage photos automatically with our new color correction feature.
-            Enhance face and more details in old photos automatically with our
-            customizable AI features.
-          </p>
-        </div>
-        <div className="flex mt-16 ">
-          <div className="relative -mb-20 left-20 z-10">
-            <p className="btn absolute -left-4">Before</p>
-
-            <Image
-              className="h-full w-full"
-              src={heroBeforeImg}
-              alt="heroBeforeImg"
-              //   fill
-              //   layout="fill"
-              //   quality={100}
-            />
-          </div>
-          <div className="relative -mt-20 right-20 ">
-            <p className="btn absolute right-0">After</p>
-            <Image
-              className="h-full w-full"
-              src={heroAfterImg}
-              alt="heroBeforeImg"
-              //   fill
-              //   layout="fill"
-              //   quality={100}
-            />
-          </div>
         </div>
       </div>
     </section>

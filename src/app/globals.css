@@ -19,5 +19,9 @@
 }
 
 .btn {
-  @apply py-2 px-4 text-white bg-primary rounded-lg;
+  @apply py-2 px-4 !text-white bg-primary rounded-lg;
 }
+
+/* .bgimage {
+  background-image: url("/public/assets/heroBanner.png");
+} */

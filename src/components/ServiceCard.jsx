@@ -1,17 +1,27 @@
 import Image from "next/image";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import serviceCardImgSeparationLine from "@/public/assets/serviceCardImgSeparationLine.png";
 
 const ServiceCard = ({ img1, img2, title, description, btnTitle }) => {
   return (
-    <div className="flex flex-col shadow-xl rounded-lg bg-white">
-      <div className="flex rounded-lg">
+    <div className="flex flex-col shadow-xl rounded-lg bg-white overflow-hidden max-w-[312px]">
+      <div className="flex rounded-lg relative">
         <div className="relative h-52 w-full rounded-lg">
           <Image
             className="rounded-tl-lg"
             src={img1}
             alt="Sunset"
             layout="fill"
+            sizes=""
+            quality={100}
+          />
+        </div>
+        <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-10">
+          <Image
+            className="rounded-tr-lg"
+            src={serviceCardImgSeparationLine}
+            alt="Sunset"
             quality={100}
           />
         </div>

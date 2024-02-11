@@ -1,9 +1,5 @@
-import {
-  FaTelegramPlane,
-  FaInstagram,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import Link from "next/link";
+import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const socialLinks = [
@@ -26,18 +22,16 @@ const socialLinks = [
 ];
 const SocialLinks = () => {
   return (
-    <div className="flex flex-col gap-2 text-start">
+    <div className="flex flex-col max-md:justify-start max-md:items-start gap-2 text-start">
       <h2 className="font-semibold text-2xl mb-4">Community</h2>
       <div className="flex flex-col items-center gap-4">
         {socialLinks.map((link) => (
-          <>
-            <div
-              key={link.link}
-              className="bg-black text-white rounded-full p-2 hover:text-primary"
-            >
-              <a href={link.link}>{link.icon}</a>
-            </div>
-          </>
+          <div
+            key={link.link}
+            className="hover:bg-white hover:text-primary rounded-full p-2 text-white bg-primary"
+          >
+            <Link href={link.link}>{link.icon}</Link>
+          </div>
         ))}
       </div>
     </div>
