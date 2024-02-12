@@ -189,10 +189,10 @@ const Navbar = () => {
             {/* btn for large devices */}
             <div className="hidden xl:block">
               <div className="flex items-center gap-4 relative  justify-center">
-                <button className="btn">
+                <button className="btn !bg-transparent font-medium  !border border-primary !text-primary">
                   <Link href={"/signIn"}>Sign In</Link>
                 </button>
-                <button className="btn">
+                <button className="btn font-medium">
                   <Link href={"/signUp"}>Sign Up</Link>
                 </button>
               </div>
