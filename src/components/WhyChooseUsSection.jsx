@@ -48,8 +48,9 @@ const WhyChooseUsSection = () => {
           </h2>
         </div>
         <div className="flex flex-col md:flex-row flex-wrap gap-4 mx-auto items-center justify-center">
-          {chooseUsDataArray.map((option) => (
+          {chooseUsDataArray.map((option, index) => (
             <ChooseUsCard
+              key={index}
               img={option.img}
               title={option.title}
               description={option.description}

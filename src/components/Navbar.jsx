@@ -72,7 +72,7 @@ const NavLinks = [
         href: "/backgroundRemoveScreen",
       },
       {
-        title: "IMAGE UPSCALE",
+        title: "IMAGE BLUR",
         href: "/blurScreen",
       },
     ],
@@ -133,12 +133,12 @@ const Navbar = () => {
           {/* nav items for large devices */}
           <div className="flex gap-32 justify-between items-center">
             <ul className="md:flex space-x-8 hidden">
-              {NavLinks.map((link) =>
+              {NavLinks.map((link, index) =>
                 link.title === "Tools" ? (
                   <li
                     className="hover:cursor-pointer"
                     onClick={() => setShowTools((prev) => !prev)}
-                    key={link.title}
+                    key={index}
                   >
                     <div className="flex gap-2 text-base text-black hover:text-primary first:font-medium items-center">
                       {link.title}
@@ -158,9 +158,9 @@ const Navbar = () => {
                         } bg-lightGray mt-6  rounded-lg `}
                       >
                         {showTools &&
-                          link.toolsArray.map((tool) => (
+                          link.toolsArray.map((tool, index) => (
                             <li
-                              key={tool.title}
+                              key={index}
                               className="border-b border-b-darkGray px-8 py-4"
                             >
                               <Link
@@ -175,7 +175,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                 ) : (
-                  <li key={link.title}>
+                  <li key={index}>
                     <Link
                       href={link.href}
                       className="block text-base text-black hover:text-primary first:font-medium"

@@ -1,9 +1,9 @@
-import ColorizeImgCardsSection from "@/src/components/ColorizeImgSection/ColorizeImgCardsSection";
-import ColorizeImgDetailsSection from "@/src/components/ColorizeImgSection/ColorizeImgDetailsSection";
-import ColorizeImgInfoSection from "@/src/components/ColorizeImgSection/ColorizeImgInfoSection";
-import ColorizeImgSampleSection from "@/src/components/ColorizeImgSection/ColorizeImgSampleSection";
-import ColorizeImgUploadSection from "@/src/components/ColorizeImgSection/ColorizeImgUploadSection";
-import ColorizeImgVideoSection from "@/src/components/ColorizeImgVideoSection";
+import ColorizeImgCardsSection from "@/src/components/ColorizeImgPageComponents/ColorizeImgCardsSection";
+import ColorizeImgDetailsSection from "@/src/components/ColorizeImgPageComponents/ColorizeImgDetailsSection";
+import ColorizeImgInfoSection from "@/src/components/ColorizeImgPageComponents/ColorizeImgInfoSection";
+import ColorizeImgSampleSection from "@/src/components/ColorizeImgPageComponents/ColorizeImgSampleSection";
+import ColorizeImgUploadSection from "@/src/components/ColorizeImgPageComponents/ColorizeImgUploadSection";
+import ColorizeImgVideoSection from "@/src/components/ColorizeImgPageComponents/ColorizeImgVideoSection";
 import React from "react";
 
 const ColorizeScreenPage = () => {

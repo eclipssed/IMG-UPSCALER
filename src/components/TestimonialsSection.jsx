@@ -55,6 +55,7 @@ const TestimonialsSection = () => {
         <div className="flex relative flex-col md:flex-row flex-wrap gap-4 mx-auto items-center justify-center">
           {chooseUsDataArray.map((option, index) => (
             <TestimonialCard
+              key={index}
               img={option.img}
               title={option.title}
               description={option.description}

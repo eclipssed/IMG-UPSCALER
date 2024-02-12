@@ -7,7 +7,7 @@ import upscaleSectionLargeImg from "@/public/assets/upscaleSectionLargeImg.png";
 const UpscaleImgSection = () => {
   return (
     <section className="bg-primary py-16 my-16 text-white">
-      <div className="wrapper flex lg:justify-between gap-8 flex-col lg:flex-row justify-center items-center  ">
+      <div className="wrapper flex lg:justify-between gap-16 flex-col lg:flex-row justify-center items-center  ">
         <div className="space-y-4 lg:max-w-[500px]  w-full">
           <h2 className="text-2xl font-semibold">Upscale images online</h2>
           <p>
@@ -20,7 +20,7 @@ const UpscaleImgSection = () => {
             engaged for longer.
           </p>
         </div>
-        <div className="flex justify-center items-center gap-4 ">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 ">
           <Image
             height={200}
             width={150}

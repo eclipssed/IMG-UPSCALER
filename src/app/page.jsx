@@ -1,5 +1,5 @@
 import HeroSection from "../components/HeroSection";
-import ColorizeImgSection from "../components/ColorizeImgSection/ColorizeImgSection";
+import ColorizeImgSection from "../components/ColorizeImgPageComponents/ColorizeImgSection";
 import UpscaleImgSection from "../components/UpscaleImgSection";
 import RemoveBgImgSection from "../components/RemoveBgImgSection.jsx";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";

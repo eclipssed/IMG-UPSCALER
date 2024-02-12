@@ -25,9 +25,9 @@ const SocialLinks = () => {
     <div className="flex flex-col max-md:justify-start max-md:items-start gap-2 text-start">
       <h2 className="font-semibold text-2xl mb-4">Community</h2>
       <div className="flex flex-col items-center gap-4">
-        {socialLinks.map((link) => (
+        {socialLinks.map((link, index) => (
           <div
-            key={link.link}
+            key={index}
             className="hover:bg-white hover:text-primary rounded-full p-2 text-white bg-primary"
           >
             <Link href={link.link}>{link.icon}</Link>
