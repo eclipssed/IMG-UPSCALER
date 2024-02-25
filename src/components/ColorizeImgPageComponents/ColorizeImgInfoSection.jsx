@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const ColorizeImgInfoSection = () => {
   return (
-    <section className="bg-primary text-white my-8 py-16">
+    <section className="bg-primary text-white mt-36 py-16">
       <div className="wrapper grid grid-cols-1 lg:grid-cols-2 items-center gap-16 lg:gap-16">
         <div className="flex gap-8 flex-col  justify-center  ">
           <h2 className="text-2xl font-semibold">

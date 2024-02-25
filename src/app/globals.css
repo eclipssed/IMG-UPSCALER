@@ -21,7 +21,8 @@
 .btn {
   @apply py-2 px-4 text-white bg-primary rounded-lg;
 }
+.flexibleBtn {
+  @apply bg-transparent font-medium py-2 px-4 rounded-lg transition-all duration-300 ease-in-out  border border-primary text-primary  hover:text-white hover:bg-primary;
+}
 
-/* .bgimage {
-  background-image: url("/public/assets/heroBanner.png");
-} */
+

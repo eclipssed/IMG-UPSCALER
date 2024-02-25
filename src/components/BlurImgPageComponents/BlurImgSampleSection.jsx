@@ -10,7 +10,7 @@ import blurSectionSampleImg6 from "@/public/assets/blurSectionSampleImg6.png";
 
 const BlurImgSampleSection = () => {
   return (
-    <section className="   text-center relative my-8 py-8 flex flex-col gap-4">
+    <section className="text-center relative mt-36 py-8 flex flex-col gap-4">
       <Image
         src={testimonialsBg}
         alt="image"

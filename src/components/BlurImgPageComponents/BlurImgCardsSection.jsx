@@ -48,7 +48,7 @@ const CardsData = [
 
 const BlurImgCardsSection = () => {
   return (
-    <section className="wrapper my-16">
+    <section className="wrapper mt-36">
       <div className="flex flex-col gap-4 items-center justify-center">
         <div className="flex flex-col justify-center items-center gap-4 text-center">
           <h2 className="text-xl font-semibold">

@@ -6,7 +6,7 @@ import React from "react";
 
 const UpscaleImgDetailsSection = () => {
   return (
-    <section className="border-2 border-t-primary border-b-primary border-dashed mt-32 mb-8">
+    <section className="border-2 border-t-primary border-b-primary border-dashed mt-36">
       <div className="wrapper py-8">
         {/* 1 */}
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 my-16">

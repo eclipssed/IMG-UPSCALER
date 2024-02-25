@@ -10,7 +10,7 @@ import upscaleSectionSampleImg6 from "@/public/assets/upscaleSectionSampleImg6.p
 
 const UpscaleImgSampleSection = () => {
   return (
-    <section className="   text-center relative my-8 py-8 flex flex-col gap-4">
+    <section className="   text-center relative mt-36 flex flex-col gap-4">
       <Image
         src={testimonialsBg}
         alt="image"

@@ -43,7 +43,7 @@ const chooseUsDataArray = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="wrapper py-8 my-16 text-black ">
+    <section className="wrapper mt-36 text-black ">
       <div className="flex flex-col gap-16 text-center">
         <div className="space-y-4 col-span-5">
           <p className="font-semibold">Testimonials</p>

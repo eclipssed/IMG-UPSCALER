@@ -5,8 +5,8 @@ import bgRemoveSectionImg2 from "@/public/assets/bgRemoveSectionImg2.png";
 
 const UpscaleImgSection = () => {
   return (
-    <section className=" py-16 my-16 text-black">
-      <div className="wrapper grid grid-cols-1 lg:grid-cols-2 gap-8 my-16 items-center">
+    <section className="mt-36 text-black">
+      <div className="wrapper grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <Image
           src={bgRemoveSectionImg1}
           height={384}
@@ -27,8 +27,8 @@ const UpscaleImgSection = () => {
           </p>
         </div>
       </div>
-      <div className="wrapper grid grid-cols-1 lg:grid-cols-2 gap-8 my-16 items-center">
-        <div className="space-y-4 lg:max-w-[376px] lg:ml-auto">
+      <div className="wrapper grid grid-cols-1 lg:grid-cols-2 gap-8 mt-36 items-center">
+        <div className="space-y-4 lg:max-w-[376px] ">
           <h2 className="text-2xl font-semibold">
             Make Backgrounds Transparent for Any Image
           </h2>

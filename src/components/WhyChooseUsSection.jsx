@@ -38,7 +38,7 @@ const chooseUsDataArray = [
 
 const WhyChooseUsSection = () => {
   return (
-    <section className="bg-primary py-8 my-16 text-white">
+    <section className="bg-primary py-16 mt-36 text-white">
       <div className="wrapper flex flex-col gap-16 text-center">
         <div className="space-y-4 col-span-5">
           <p>WHY CHOOSE US</p>

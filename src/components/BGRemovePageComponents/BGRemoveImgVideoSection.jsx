@@ -5,13 +5,13 @@ import colorizeImgVideoIcon from "@/public/assets/colorizeImgVideoIcon.png";
 
 const BGRemoveImgVideoSection = () => {
   return (
-    <section className="text-white bg-primary my-8 py-16">
+    <section className="text-white bg-primary mt-36 py-16">
       <div className="wrapper flex flex-col gap-4 text-center">
         <h3 className="text-xl font-semibold">
           Interested how our upscalerworks for you? <br /> Watch our 1 minute
           video
         </h3>
-        <div className="relative ">
+        <div className="relative mx-auto">
           <Image
             src={colorizeImgVideoIcon}
             height={22}

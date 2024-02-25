@@ -7,6 +7,11 @@ import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { auth } from "@/src/config/firebaseConfig";
+import { signOut } from "firebase/auth";
+import toast from "react-hot-toast";
+import Cookies from "js-cookie";
 
 const mobileNavLinks = [
   {
@@ -28,6 +33,18 @@ const mobileNavLinks = [
   {
     href: "/backgroundRemoveScreen",
     title: "Background Remove Screen",
+  },
+  {
+    href: "/reImage",
+    title: "Re-Image",
+  },
+  {
+    href: "/replaceBackground",
+    title: "Replace background",
+  },
+  {
+    href: "/swap",
+    title: "Swap Face",
   },
   {
     href: "/blog",
@@ -75,6 +92,18 @@ const NavLinks = [
         title: "IMAGE BLUR",
         href: "/blurScreen",
       },
+      {
+        title: "RE-IMAGE",
+        href: "/reImage",
+      },
+      {
+        title: "REPLACE BACKGROUND",
+        href: "/replaceBackground",
+      },
+      {
+        title: "SWAP FACE",
+        href: "/swap",
+      },
     ],
   },
   {
@@ -91,10 +120,31 @@ const Navbar = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [showTools, setShowTools] = useState(false);
+  const router = useRouter();
+
+  const pathName = usePathname();
 
   const toggleMenu = () => {
     setisMenuOpen((prev) => !prev);
   };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth)
+        .then((res) => {
+          Cookies.set("firebaseAuthToken", "");
+          toast.success("successfully signed out");
+          router.push("/signIn");
+        })
+        .catch((err) => toast.error("Failed to signout ", err));
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+      throw error;
+    }
+  };
+
+  // console.log(auth?.currentUser);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -178,7 +228,11 @@ const Navbar = () => {
                   <li key={index}>
                     <Link
                       href={link.href}
-                      className="block text-base text-black hover:text-primary first:font-medium"
+                      className={`block text-base ${
+                        pathName === link.href
+                          ? "border-b-2 border-primary "
+                          : ""
+                      } text-black hover:text-primary first:font-medium`}
                     >
                       {link.title}
                     </Link>
@@ -187,15 +241,25 @@ const Navbar = () => {
               )}
             </ul>
             {/* btn for large devices */}
+
             <div className="hidden xl:block">
-              <div className="flex items-center gap-4 relative  justify-center">
-                <button className="btn !bg-transparent font-medium  !border border-primary !text-primary">
-                  <Link href={"/signIn"}>Sign In</Link>
-                </button>
-                <button className="btn font-medium">
-                  <Link href={"/signUp"}>Sign Up</Link>
-                </button>
-              </div>
+              {auth?.currentUser ? (
+                <div className="flex items-center gap-4 relative  justify-center">
+                  <button onClick={handleSignOut} className="btn font-medium">
+                    logout
+                  </button>
+                </div>
+              ) : (
+                <div className="flex items-center gap-4 relative  justify-center">
+                  <button className="flexibleBtn">
+                    {/* <button className="btn !bg-transparent font-medium  !border border-primary !text-primary"> */}
+                    <Link href={"/signIn"}>Sign In</Link>
+                  </button>
+                  <button className="btn font-medium">
+                    <Link href={"/signUp"}>Sign Up</Link>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
           {/* menu btn for only mobile devices */}

@@ -17,6 +17,16 @@ module.exports = {
         darkGray: "#DCDCDC",
         primary: "#00ADB5",
       },
+      animation: {
+        "infinite-scroll": "infinite-scroll 25s linear infinite",
+        "infinite-scroll-hover": "infinite-scroll 100s linear infinite",
+      },
+      keyframes: {
+        "infinite-scroll": {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
+        },
+      },
     },
   },
   plugins: [],

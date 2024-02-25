@@ -5,7 +5,7 @@ import heroAfterImg from "@/public/assets/heroAfterImg.png";
 
 const ColorizeImgSection = () => {
   return (
-    <section className="wrapper grid grid-cols-1 lg:grid-cols-2  my-32 gap-28">
+    <section className="wrapper grid grid-cols-1 lg:grid-cols-2  mt-36 gap-28">
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold">
           Colorize Black and White Photos <br /> Online with IMG-AI Colorizer
