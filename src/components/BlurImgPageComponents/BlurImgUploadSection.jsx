@@ -1,12 +1,28 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import blurSectionHeroImg from "@/public/assets/blurSectionHeroImg.png";
 import colorizeSectionUploadImg1 from "@/public/assets/colorizeSectionUploadImg1.png";
 import colorizeSectionUploadImg3 from "@/public/assets/colorizeSectionUploadImg3.png";
 import colorizeSectionUploadImg2 from "@/public/assets/colorizeSectionUploadImg2.png";
 import { FaImage } from "react-icons/fa";
+import ImgDownload from "../ImgDownload";
 
 const BlurImgUploadSection = () => {
+  const [image, setImage] = useState("");
+  const [previewImage, setPreviewImage] = useState("");
+  const blurImgApi = "https://clipdrop-api.co/reimagine/v1/reimagine";
+
+  const handleChange = async (e) => {
+    const file = e.target.files[0];
+    setImage(file);
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      const result = reader.result;
+      setPreviewImage(result);
+    };
+  };
   return (
     <section className="wrapper">
       <div className="text-center my-8 ">
@@ -22,7 +38,7 @@ const BlurImgUploadSection = () => {
             <div className="mb-2 ">
               <label className="btn cursor-pointer flex justify-center items-center gap-2">
                 <FaImage />
-                <input type="file" className="hidden" />
+                <input type="file" onChange={handleChange} className="hidden" />
                 <span>Open Image</span>
               </label>
             </div>
@@ -68,6 +84,13 @@ const BlurImgUploadSection = () => {
           />
         </div>
       </div>
+
+      <ImgDownload
+        api={blurImgApi}
+        action={"Blur Image"}
+        propImage={image}
+        previewImage={previewImage}
+      />
     </section>
   );
 };

@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "pixabay.com",
       },
+      {
+        protocol: "https",
+        hostname: "clipdrop-api.co",
+      },
     ],
   },
 };

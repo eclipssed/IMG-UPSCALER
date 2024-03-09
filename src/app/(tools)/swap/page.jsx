@@ -1,3 +1,4 @@
+import ImgDownload from "@/src/components/ImgDownload";
 import SwapImgCardsSection from "@/src/components/SwapImgPageComponents/SwapImgCardsSection";
 import SwapImgDetailsSection from "@/src/components/SwapImgPageComponents/SwapImgDetailsSection";
 import SwapImgInfoSection from "@/src/components/SwapImgPageComponents/SwapImgInfoSection";
@@ -10,6 +11,7 @@ const SwapPage = () => {
   return (
     <section className="mt-32">
       <SwapImgUploadSection />
+    
       <SwapImgInfoSection />
       <SwapImgDetailsSection />
       <SwapImgCardsSection />

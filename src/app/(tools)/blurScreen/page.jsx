@@ -4,12 +4,14 @@ import BlurImgInfoSection from "@/src/components/BlurImgPageComponents/BlurImgIn
 import BlurImgSampleSection from "@/src/components/BlurImgPageComponents/BlurImgSampleSection";
 import BlurImgUploadSection from "@/src/components/BlurImgPageComponents/BlurImgUploadSection";
 import BlurImgVideoSection from "@/src/components/BlurImgPageComponents/BlurImgVideoSection";
+import ImgDownload from "@/src/components/ImgDownload";
 import React from "react";
 
 const BlurScreenPage = () => {
   return (
     <section className="mt-32">
       <BlurImgUploadSection />
+    
       <BlurImgInfoSection />
       <BlurImgDetailsSection />
       <BlurImgCardsSection />

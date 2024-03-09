@@ -4,12 +4,14 @@ import ColorizeImgInfoSection from "@/src/components/ColorizeImgPageComponents/C
 import ColorizeImgSampleSection from "@/src/components/ColorizeImgPageComponents/ColorizeImgSampleSection";
 import ColorizeImgUploadSection from "@/src/components/ColorizeImgPageComponents/ColorizeImgUploadSection";
 import ColorizeImgVideoSection from "@/src/components/ColorizeImgPageComponents/ColorizeImgVideoSection";
+import ImgDownload from "@/src/components/ImgDownload";
 import React from "react";
 
 const ColorizeScreenPage = () => {
   return (
     <section className="mt-32">
       <ColorizeImgUploadSection />
+   
       <ColorizeImgInfoSection />
       <ColorizeImgDetailsSection />
       <ColorizeImgCardsSection />

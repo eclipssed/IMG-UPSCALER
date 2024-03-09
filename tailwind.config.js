@@ -18,7 +18,7 @@ module.exports = {
         primary: "#00ADB5",
       },
       animation: {
-        "infinite-scroll": "infinite-scroll 25s linear infinite",
+        "infinite-scroll": "infinite-scroll 35s linear infinite",
         "infinite-scroll-hover": "infinite-scroll 100s linear infinite",
       },
       keyframes: {
