@@ -22,7 +22,7 @@ const BlurImgDetailsSection = () => {
               with graphics and design elements to instantly create
               beautiful,professional quality images for all your business and
               personal needs.Use it to control the depth of field and direct the
-              viewer's attention to the most important part of the image. Blur
+              viewer&apos;s attention to the most important part of the image. Blur
               images with unparalleled ease and gobeyond the limits of viewing
               angle!With a few quick and easy clicks, you can use it to blur
               images, soften your photos and create a mysterious and seductive
@@ -56,9 +56,9 @@ const BlurImgDetailsSection = () => {
               the feel of an image, provide a motion effect, or simply give you
               control of the focus of a picture. Use the photo blur effect to
               highlight or hide any element within the frame. By controlling
-              your depth of field, you guide your viewer's focus to what matters
+              your depth of field, you guide your viewer&apos;s focus to what matters
               most to you in your image.Every photo should draw the eye to
-              something specific. Whether that’s a figure, building, message or
+              something specific. Whether that&apos;s a figure, building, message or
               some other element, blurring the extraneous details can help
               really emphasize that central focus. The go-to method for making
               something that truly pops out in photography requires adjusting

@@ -29,7 +29,7 @@ const chooseUsDataArray = [
     img: chooseUsImg3,
     title: "Image Background Remove",
     description:
-      "If you remove the background, add it on some beautiful scenes, backgrounds and make it more supper cool with Fotor's image background remover. You can get more clients soon with an amazing car banner.",
+      "If you remove the background, add it on some beautiful scenes, backgrounds and make it more supper cool with Fotor&apos;s image background remover. You can get more clients soon with an amazing car banner.",
   },
   {
     img: chooseUsImg4,
@@ -48,7 +48,7 @@ const TestimonialsSection = () => {
         <div className="space-y-4 col-span-5">
           <p className="font-semibold">Testimonials</p>
           <h2 className="text-2xl font-bold">
-            From startups to established brands, <br /> you'll be in good
+            From startups to established brands, <br /> you&apos;ll be in good
             company.
           </h2>
         </div>

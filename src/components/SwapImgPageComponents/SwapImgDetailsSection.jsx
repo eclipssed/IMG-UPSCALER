@@ -43,11 +43,11 @@ const SwapImgDetailsSection = () => {
             </h2>
             <p>
               We all have that one picture in our old album that we love, but
-              it's too small! Upscaling images today is not that hard because of
+              it&apos;s too small! Upscaling images today is not that hard because of
               new technologies. There are many AI photo enlargers that everyone
-              can use, but it's not for free. But what if you don't have any
+              can use, but it&apos;s not for free. But what if you don&apos;t have any
               premium subscription for photo editing apps installed on your
-              phone? That doesn't mean you can't upsize your photos. Image
+              phone? That doesn&apos;t mean you can&apos;t upsize your photos. Image
               upscaling is just the opposite of image resizing, it is the
               process of increasing resolution. Images can be upscaled with
               software, which would generate a high-resolution image with the
@@ -80,11 +80,11 @@ const SwapImgDetailsSection = () => {
             </h2>
             <p>
               When printing images, quality plays a major role in how sharp the
-              photo looks. DPI stands for "dots per inch" and is responsible for
-              a clear image. As you'd assume, the fewer dots per inch of your
+              photo looks. DPI stands for dots per inch and is responsible for
+              a clear image. As you&apos;d assume, the fewer dots per inch of your
               printed photo, the lower the resolution will be. On the other
               hand, the more dots per inch, the higher the resolution will be.
-              To avoid grainy images, you'll need a high DPI. The best image
+              To avoid grainy images, you&apos;ll need a high DPI. The best image
               quality for printing is 300 DPI and above. While 150 DPI may be
               acceptable, the higher the better.
             </p>

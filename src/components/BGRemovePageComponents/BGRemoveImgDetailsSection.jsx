@@ -25,8 +25,8 @@ const BGRemoveImgDetailsSection = () => {
             <p>
               Image-Ai saves the day when you quickly need to cut out a person
               or object to paste into another picture, or to remove the
-              background from a photo. You don't need any specific skills or
-              professional software for a perfect image clip. Just upload the
+              background from a photo. You don&apos;t need any specific skills
+              or professional software for a perfect image clip. Just upload the
               image and our algorithm will automatically remove the background
               using deep neural networks. In the real world, some objects are
               transparent. And removing backgrounds from photos with such

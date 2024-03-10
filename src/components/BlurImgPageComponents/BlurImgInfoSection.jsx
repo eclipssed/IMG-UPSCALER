@@ -14,7 +14,7 @@ const BlurImgInfoSection = () => {
             Use image effects on your blurred image to make it more effective
             against a blurred background.Create graphics and include emojis on
             your blurred photo to make them stand out. Carve your designs and
-            graphics into the viewers' minds by highlighting their impact
+            graphics into the viewers minds by highlighting their impact
             through photo blur. Use our plethora of image effects to complement
             your blur photo!
           </p>

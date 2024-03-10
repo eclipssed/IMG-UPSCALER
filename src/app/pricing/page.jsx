@@ -66,7 +66,7 @@ const PricingPage = () => {
         <div className="bg-[#66ced3]  space-y-4 py-6 text-center ">
           <div className="wrapper flex justify-between items-center flex-wrap maxlg:justify-center gap-4">
             <p>
-              Cancel plan at any time with one month's notice. Powered by
+              Cancel plan at any time with one month&apos;s notice. Powered by
               Paddle.
             </p>
             <button className="btn !px-6">Create a free account</button>
