@@ -42,7 +42,7 @@ const SignInPage = () => {
             secure: true,
           });
           // localStorage.setItem("firebaseAuthToken", accessToken);
-          console.log(accessToken);
+          // console.log(accessToken);
         })
         .catch(() => toast.error("Invalid credentials."));
     } catch (error) {

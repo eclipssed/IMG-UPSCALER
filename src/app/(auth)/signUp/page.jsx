@@ -62,7 +62,7 @@ const SignUpPage = () => {
           toast.error("Couldn't sign in with google. Please try again later.")
         );
 
-      console.log(res.user.emailVerified);
+      // console.log(res.user.emailVerified);
     } catch (error) {
       console.log(error);
       toast.error("Couldn't sign in with google. Please try again later.");
