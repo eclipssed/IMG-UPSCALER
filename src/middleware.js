@@ -26,10 +26,12 @@ export function middleware(request) {
 // See "Matching Paths" below to learn more
 export const config = {
   matcher: [
-    "/backgroundRemoveScreen",
-    "/blurScreen",
-    "/colorizeScreen",
-    "/upscaleScreen",
+    // "/backgroundRemoveScreen",
+    // "/blurScreen",
+    // "/colorizeScreen",
+    // "/upscaleScreen",
+    "/replaceBackground",
+    "/reImage",
     "/signUp",
     "/signIn",
   ],

@@ -76,22 +76,22 @@ const NavLinks = [
     href: "/",
     title: "Tools",
     toolsArray: [
-      {
-        title: "IMAGE COLORIZE",
-        href: "/colorizeScreen",
-      },
-      {
-        title: "IMAGE UPSCALE",
-        href: "/upscaleScreen",
-      },
-      {
-        title: "BACKGROUND REMOVE",
-        href: "/backgroundRemoveScreen",
-      },
-      {
-        title: "IMAGE BLUR",
-        href: "/blurScreen",
-      },
+      // {
+      //   title: "IMAGE COLORIZE",
+      //   href: "/colorizeScreen",
+      // },
+      // {
+      //   title: "IMAGE UPSCALE",
+      //   href: "/upscaleScreen",
+      // },
+      // {
+      //   title: "BACKGROUND REMOVE",
+      //   href: "/backgroundRemoveScreen",
+      // },
+      // {
+      //   title: "IMAGE BLUR",
+      //   href: "/blurScreen",
+      // },
       {
         title: "RE-IMAGE",
         href: "/reImage",
@@ -100,10 +100,10 @@ const NavLinks = [
         title: "REPLACE BACKGROUND",
         href: "/replaceBackground",
       },
-      {
-        title: "SWAP FACE",
-        href: "/swap",
-      },
+      // {
+      //   title: "SWAP FACE",
+      //   href: "/swap",
+      // },
     ],
   },
   {
@@ -163,6 +163,9 @@ const Navbar = () => {
 
   return (
     <header className=" w-full bg-transparent  fixed top-0 left-0 right-0 z-30">
+      <div className="bg-primary text-white text-center p-2">
+            <p>If the tools are not working then it means the api credits has been expired.</p>
+          </div>
       <nav
         className={` py-4 ${
           isSticky

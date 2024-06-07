@@ -2,10 +2,11 @@ import Image from "next/image";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import serviceCardImgSeparationLine from "@/public/assets/serviceCardImgSeparationLine.png";
+import Link from "next/link";
 
-const ServiceCard = ({ img1, img2, title, description, btnTitle }) => {
+const ServiceCard = ({ img1, img2, title, description, btnTitle, link }) => {
   return (
-    <div className="flex flex-col shadow-xl rounded-lg bg-white overflow-hidden min-w-[312px]">
+    <div className="flex flex-col shadow-xl rounded-lg bg-white overflow-hidden max-w-[312px]">
       <div className="flex rounded-lg relative">
         <div className="relative h-52 w-full rounded-lg">
           <Image
@@ -41,12 +42,12 @@ const ServiceCard = ({ img1, img2, title, description, btnTitle }) => {
           <p className="line-clamp-3">{description}</p>
         </div>
         <div>
-          <button className="flexibleBtn flex gap-4 transition-all duration-300 ease-in-out  w-full items-center group">
+          <Link href={link} className="flexibleBtn flex gap-4 transition-all duration-300 ease-in-out  w-full items-center group">
             {btnTitle}
             <span>
               <FaArrowRight className="h-4 w-4  transition-all duration-300 ease-in-out relative translate-x-0 group-hover:translate-x-12" />
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

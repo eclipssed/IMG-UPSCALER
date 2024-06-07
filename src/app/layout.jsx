@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
       <body className={montserrat.className}>
         <Toaster position="top-center" reverseOrder={false} />
         <div className=" flex min-h-screen flex-col justify-between text-black scroll-smooth">
+          
           <Navbar />
           {children}
           <Footer />
