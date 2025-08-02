@@ -4,7 +4,6 @@ import BGRemoveImgInfoSection from "@/src/components/BGRemovePageComponents/BGRe
 import BGRemoveImgSampleSection from "@/src/components/BGRemovePageComponents/BGRemoveImgSampleSection";
 import BGRemoveImgUploadSection from "@/src/components/BGRemovePageComponents/BGRemoveImgUploadSection";
 import BGRemoveImgVideoSection from "@/src/components/BGRemovePageComponents/BGRemoveImgVideoSection";
-import ImgDownload from "@/src/components/ImgDownload";
 import React from "react";
 
 const BackgroundRemoveScreenPage = () => {

@@ -5,13 +5,11 @@ import UpscaleImgSampleSection from "@/src/components/UpscaleImgPageComponents/U
 import UpscaleImgUploadSection from "@/src/components/UpscaleImgPageComponents/UpscaleImgUploadSection";
 import UpscaleImgVideoSection from "@/src/components/UpscaleImgPageComponents/UpscaleImgVideoSection";
 import React from "react";
-import ImgDownload from "../../../components/ImgDownload";
 
 const UpscaleScreenPage = () => {
   return (
     <section className="mt-32">
       <UpscaleImgUploadSection />
-
       <UpscaleImgInfoSection />
       <UpscaleImgDetailsSection />
       <UpscaleImgCardsSection />

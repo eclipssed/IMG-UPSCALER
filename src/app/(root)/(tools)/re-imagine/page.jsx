@@ -1,6 +1,5 @@
 
 
-import ImgDownload from "@/src/components/ImgDownload";
 import ReImageImgCardsSection from "@/src/components/ReImagePageComponents/ReImageImgCardsSection";
 import ReImageImgDetailsSection from "@/src/components/ReImagePageComponents/ReImageImgDetailsSection";
 import ReImageImgInfoSection from "@/src/components/ReImagePageComponents/ReImageImgInfoSection";

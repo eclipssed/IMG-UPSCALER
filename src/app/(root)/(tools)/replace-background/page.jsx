@@ -1,4 +1,3 @@
-import ImgDownload from "@/src/components/ImgDownload";
 import ReplaceBGImgCardsSection from "@/src/components/ReplaceBGPageComponents/ReplaceBGImgCardsSection";
 import ReplaceBGImgDetailsSection from "@/src/components/ReplaceBGPageComponents/ReplaceBGImgDetailsSection";
 import ReplaceBGImgInfoSection from "@/src/components/ReplaceBGPageComponents/ReplaceBGImgInfoSection";
