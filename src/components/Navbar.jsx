@@ -159,6 +159,7 @@ const Navbar = () => {
         <div className="flex wrapper justify-between items-center text-base gap-8 ">
           <Link href="/">
             <Image
+              // className="hidden md:block"
               width={175}
               height={47}
               src={navbarLogo}

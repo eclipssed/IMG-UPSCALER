@@ -1,16 +1,6 @@
 "use client";
 
 import ServiceCard from "./ServiceCard";
-import colorizeImg1 from "@/public/assets/colorizeImg1.png";
-import colorizeImg2 from "@/public/assets/colorizeImg2.png";
-import upscaleImg1 from "@/public/assets/upscaleImg1.png";
-import upscaleImg2 from "@/public/assets/upscaleImg2.png";
-import removeBgImg1 from "@/public/assets/removeBgImg1.png";
-import removeBgImg2 from "@/public/assets/removeBgImg2.png";
-import blurBgImg1 from "@/public/assets/blurBgImg1.png";
-import blurBgImg2 from "@/public/assets/blurBgImg2.png";
-import textRemoveImg1 from "@/public/assets/textRemoveImg1.png";
-import textRemoveImg2 from "@/public/assets/textRemoveImg2.png";
 import replaceBackgroundImg1 from "@/public/assets/replaceBackgroundImg1.png";
 import replaceBackgroundImg2 from "@/public/assets/replaceBackgroundImg2.png";
 import reImg1 from "@/public/assets/reImg1.png";
@@ -81,17 +71,17 @@ const servicesCardArray = [
 
 const HeroSection = () => {
   return (
-    <section className=" mt-28  w-full ">
+    <section className=" mt-22  w-full ">
       <div className="h-[400px] relative w-full  ">
         <Image
-          className="  object-cover"
+          className="object-cover"
           src={heroBanner}
           alt="heroBanner"
           fill
         />
       </div>
 
-      <div className="wrapper -mt-[410px] flex flex-col justify-center items-center py-16">
+      <div className="wrapper -mt-[310px] flex flex-col justify-center items-center py-16">
         <div className="text-center text-white z-10 space-y-3">
           <p className="text-xl">Img Upscaler</p>
           <h2 className="font-semibold text-2xl">

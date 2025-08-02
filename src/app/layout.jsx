@@ -16,7 +16,13 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "Img Upscaler",
   description:
-    "Upscale your images with Img Upscaler for free with the help of AI in just one click",
+    "Upscale your images with Img Upscaler for free with the help of AI with just one click",
+  // icons: {
+  //   // icon: "/favicon.ico", // Path to your favicon.ico
+  //   icon: "/favicon.png", // Path to your favicon.ico
+  //   shortcut: "/favicon.png", // Optional, for older browsers
+  //   apple: "/apple-touch-icon.png", // Path to your Apple touch icon
+  // },
 };
 
 export default function RootLayout({ children }) {
@@ -26,7 +32,7 @@ export default function RootLayout({ children }) {
         <ClerkProvider>
           <Toaster position="top-center" reverseOrder={false} />
           {/* <div className=" flex min-h-screen flex-col justify-between text-black scroll-smooth"> */}
-            {children}
+          {children}
           {/* </div> */}
         </ClerkProvider>
       </body>

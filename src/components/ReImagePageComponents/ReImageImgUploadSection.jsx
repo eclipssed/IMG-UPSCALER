@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import reImageSectionHeroImg from "@/public/assets/reImageSectionHeroImg.png";
 import colorizeSectionUploadImg1 from "@/public/assets/colorizeSectionUploadImg1.png";
 import colorizeSectionUploadImg3 from "@/public/assets/colorizeSectionUploadImg3.png";
