@@ -66,7 +66,7 @@ const servicesCardArray = [
     description:
       "We've combined our best-in-class Stable Diffusion implementation with some of our other internal models  to provide the best background replacement API.",
     btnTitle: "Replace BG Now",
-    link: "/replaceBackground"
+    link: "/replace-background",
   },
   {
     img1: reImg1,
@@ -75,7 +75,7 @@ const servicesCardArray = [
     description:
       "Based on your input image, we leverage the latest Stable Diffusion tech to create an infinite number of variations to suit all your use cases!",
     btnTitle: "Re-Image Now",
-    link: "/reImage"
+    link: "/re-imagine",
   },
 ];
 
@@ -104,7 +104,7 @@ const HeroSection = () => {
           // className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] space-x-4 "
         >
           <ul
-            className=" mt-8 gap-4 flex items-center justify-center "
+            className=" mt-8 gap-4 flex flex-wrap items-center justify-center "
             aria-hidden="true"
           >
             {servicesCardArray.map((service, index) => (

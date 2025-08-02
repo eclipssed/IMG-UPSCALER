@@ -8,10 +8,7 @@ import { FaXmark } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { auth } from "@/src/config/firebaseConfig";
-import { signOut } from "firebase/auth";
-import toast from "react-hot-toast";
-import Cookies from "js-cookie";
+import { SignedIn, SignedOut, useClerk, UserButton } from "@clerk/nextjs";
 
 const mobileNavLinks = [
   {
@@ -19,33 +16,33 @@ const mobileNavLinks = [
     title: "Home",
   },
   {
-    href: "/aboutUs",
+    href: "/about-us",
     title: "About us",
   },
+  // {
+  //   href: "/colorizeScreen",
+  //   title: "Colorize Screen",
+  // },
+  // {
+  //   href: "/blurScreen",
+  //   title: "Blur Screen",
+  // },
+  // {
+  //   href: "/backgroundRemoveScreen",
+  //   title: "Background Remove Screen",
+  // },
   {
-    href: "/colorizeScreen",
-    title: "Colorize Screen",
+    href: "/re-imagine",
+    title: "Re-Imagine",
   },
   {
-    href: "/blurScreen",
-    title: "Blur Screen",
-  },
-  {
-    href: "/backgroundRemoveScreen",
-    title: "Background Remove Screen",
-  },
-  {
-    href: "/reImage",
-    title: "Re-Image",
-  },
-  {
-    href: "/replaceBackground",
+    href: "/replace-background",
     title: "Replace background",
   },
-  {
-    href: "/swap",
-    title: "Swap Face",
-  },
+  // {
+  //   href: "/swap",
+  //   title: "Swap Face",
+  // },
   {
     href: "/blog",
     title: "Blog",
@@ -55,11 +52,11 @@ const mobileNavLinks = [
     title: "Pricing",
   },
   {
-    href: "/signIn",
+    href: "/sign-in",
     title: "Sign In",
   },
   {
-    href: "/signUp",
+    href: "/sign-up",
     title: "Sign Up",
   },
 ];
@@ -69,7 +66,7 @@ const NavLinks = [
     title: "Home",
   },
   {
-    href: "/aboutUs",
+    href: "/about-us",
     title: "About",
   },
   {
@@ -93,12 +90,12 @@ const NavLinks = [
       //   href: "/blurScreen",
       // },
       {
-        title: "RE-IMAGE",
-        href: "/reImage",
+        title: "RE-IMAGINE",
+        href: "/re-imagine",
       },
       {
         title: "REPLACE BACKGROUND",
-        href: "/replaceBackground",
+        href: "/replace-background",
       },
       // {
       //   title: "SWAP FACE",
@@ -121,30 +118,13 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [showTools, setShowTools] = useState(false);
   const router = useRouter();
+  const { signOut } = useClerk();
 
   const pathName = usePathname();
 
   const toggleMenu = () => {
     setisMenuOpen((prev) => !prev);
   };
-
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth)
-        .then((res) => {
-          Cookies.set("firebaseAuthToken", "");
-          toast.success("successfully signed out");
-          router.push("/signIn");
-        })
-        .catch((err) => toast.error("Failed to signout ", err));
-    } catch (error) {
-      console.log(error);
-      toast.error(error.message);
-      throw error;
-    }
-  };
-
-  // console.log(auth?.currentUser);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -163,9 +143,12 @@ const Navbar = () => {
 
   return (
     <header className=" w-full bg-transparent  fixed top-0 left-0 right-0 z-30">
-      <div className="bg-primary text-white text-center p-2">
-            <p>If the tools are not working then it means the api credits has been expired.</p>
-          </div>
+      {/* <div className="bg-primary text-white text-center p-2">
+        <p>
+          If the tools are not working then it means the api credits has been
+          expired.
+        </p>
+      </div> */}
       <nav
         className={` py-4 ${
           isSticky
@@ -245,8 +228,29 @@ const Navbar = () => {
             </ul>
             {/* btn for large devices */}
 
-            <div className="hidden xl:block">
-              {auth?.currentUser ? (
+            <div className="hidden md:block">
+              <SignedOut>
+                <div className="flex items-center gap-4 relative  justify-center">
+                  <button className="flexibleBtn">
+                    <Link href={"/sign-in"}>Sign In</Link>
+                  </button>
+                  <button className="btn font-medium">
+                    <Link href={"/sign-up"}>Sign Up</Link>
+                  </button>
+                </div>
+              </SignedOut>
+              <SignedIn>
+                <div className="flex items-center gap-4 relative  justify-center">
+                  <button
+                    onClick={() => signOut(() => router.push("/"))}
+                    className="btn font-medium"
+                  >
+                    logout
+                  </button>
+                  <UserButton />
+                </div>
+              </SignedIn>
+              {/* {auth?.currentUser ? (
                 <div className="flex items-center gap-4 relative  justify-center">
                   <button onClick={handleSignOut} className="btn font-medium">
                     logout
@@ -255,14 +259,13 @@ const Navbar = () => {
               ) : (
                 <div className="flex items-center gap-4 relative  justify-center">
                   <button className="flexibleBtn">
-                    {/* <button className="btn !bg-transparent font-medium  !border border-primary !text-primary"> */}
                     <Link href={"/signIn"}>Sign In</Link>
                   </button>
                   <button className="btn font-medium">
                     <Link href={"/signUp"}>Sign Up</Link>
                   </button>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
           {/* menu btn for only mobile devices */}
@@ -293,7 +296,20 @@ const Navbar = () => {
               onClick={() => setisMenuOpen(false)}
               className="block text-base hover:text-neutralDGrey first:font-medium hover:bg-white rounded-lg"
             >
-              {title}
+              {title === "Sign In" || title === "Sign Up" ? (
+                <>
+                  <SignedIn>
+                    <span>{title}</span>
+                  </SignedIn>
+                  <SignedOut>
+                    <span onClick={() => signOut(() => router.push("/"))}>
+                      {title}
+                    </span>
+                  </SignedOut>
+                </>
+              ) : (
+                <span>{title}</span>
+              )}
             </Link>
           ))}
         </div>
