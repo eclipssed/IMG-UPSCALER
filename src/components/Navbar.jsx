@@ -143,12 +143,6 @@ const Navbar = () => {
 
   return (
     <header className=" w-full bg-transparent  fixed top-0 left-0 right-0 z-30">
-      {/* <div className="bg-primary text-white text-center p-2">
-        <p>
-          If the tools are not working then it means the api credits has been
-          expired.
-        </p>
-      </div> */}
       <nav
         className={` py-4 ${
           isSticky
@@ -251,29 +245,16 @@ const Navbar = () => {
                   <UserButton />
                 </div>
               </SignedIn>
-              {/* {auth?.currentUser ? (
-                <div className="flex items-center gap-4 relative  justify-center">
-                  <button onClick={handleSignOut} className="btn font-medium">
-                    logout
-                  </button>
-                </div>
-              ) : (
-                <div className="flex items-center gap-4 relative  justify-center">
-                  <button className="flexibleBtn">
-                    <Link href={"/signIn"}>Sign In</Link>
-                  </button>
-                  <button className="btn font-medium">
-                    <Link href={"/signUp"}>Sign Up</Link>
-                  </button>
-                </div>
-              )} */}
             </div>
           </div>
           {/* menu btn for only mobile devices */}
-          <div className="md:hidden ">
+          <div className="md:hidden flex gap-4 items-center justify-center">
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
             <div
               onClick={toggleMenu}
-              className="text-neutralDGrey focus:outline-none focus:text-gray-500"
+              className="text-neutralDGrey  focus:outline-none focus:text-gray-500"
             >
               {isMenuOpen ? (
                 <FaXmark className="w-6 h-6 " />
@@ -290,29 +271,60 @@ const Navbar = () => {
             isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"
           }`}
         >
-          {mobileNavLinks.map(({ href, title }) => (
-            <Link
-              href={href}
-              key={title}
-              onClick={() => setisMenuOpen(false)}
-              className="block text-base hover:text-neutralDGrey first:font-medium hover:bg-white rounded-lg"
-            >
-              {title === "Sign In" || title === "Sign Up" ? (
+          {mobileNavLinks.map(({ href, title }) => {
+            if (title === "Sign In") {
+              return (
                 <>
-                  <SignedIn>
-                    <span>{title}</span>
+                  <SignedIn key="logout">
+                    <span
+                      onClick={() => {
+                        setisMenuOpen(false);
+                        signOut(() => router.push("/"));
+                      }}
+                      className="block text-base hover:text-neutralDGrey first:font-medium hover:bg-white rounded-lg cursor-pointer"
+                    >
+                      Logout
+                    </span>
                   </SignedIn>
                   <SignedOut>
-                    <span onClick={() => signOut(() => router.push("/"))}>
-                      {title}
-                    </span>
+                    <Link
+                      href={href}
+                      onClick={() => setisMenuOpen(false)}
+                      className="block text-base hover:text-neutralDGrey first:font-medium hover:bg-white rounded-lg"
+                    >
+                      <span>{title}</span>
+                    </Link>
                   </SignedOut>
                 </>
-              ) : (
+              );
+            }
+
+            if (title === "Sign Up") {
+              return (
+                <SignedOut key={title}>
+                  <Link
+                    href={href}
+                    onClick={() => setisMenuOpen(false)}
+                    className="block text-base hover:text-neutralDGrey first:font-medium hover:bg-white rounded-lg"
+                  >
+                    <span>{title}</span>
+                  </Link>
+                </SignedOut>
+              );
+            }
+
+            // All other nav items
+            return (
+              <Link
+                href={href}
+                key={title}
+                onClick={() => setisMenuOpen(false)}
+                className="block text-base hover:text-neutralDGrey first:font-medium hover:bg-white rounded-lg"
+              >
                 <span>{title}</span>
-              )}
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </nav>
     </header>
